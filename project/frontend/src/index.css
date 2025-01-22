@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* styles.css ou um arquivo CSS global */
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+.main-container {
+  height: 100%;
+  overflow-y: auto;
+  background: #101010;
+}
+
+#chat-messages {
+  height: 500px;
+  overflow-y: scroll;
+  background-color: transparent;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #343a40;
+  animation: slideIn 0.5s ease-in-out;
+  scrollbar-width: thin; /* Para Firefox */
+  scrollbar-color: #7f00ff transparent; /* Para Firefox */
+}
+
+#chat-messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+#chat-messages::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+  background: #7f00ff;
+  border-radius: 4px;
+}
+
+#chat-messages::-webkit-scrollbar-thumb:hover {
+  background: #5a00b3;
+}
+
+#chat-messages::-webkit-scrollbar-button {
+  display: none; /* Remove as setas */
+}
+
+
+/* For Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(127, 0, 255, 0.5) rgba(127, 0, 255, 0.1);
+}
+
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
